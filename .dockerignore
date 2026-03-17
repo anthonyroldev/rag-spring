@@ -1,7 +1,4 @@
 ### Java template
-# Compiled class file
-*.class
-
 # Log file
 *.log
 
@@ -46,4 +43,6 @@ gradle-app.setting
 .project
 # JDT-specific (Eclipse Java Development Tools)
 .classpath
+
+README.md
 
