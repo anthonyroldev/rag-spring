@@ -108,7 +108,7 @@ This starts three services:
 The models must be pulled once after the Ollama container starts:
 
 ```bash
-docker exec ollama ollama pull nomic-embed-text
+docker exec ollama ollama pull nomic-embed-text-v2-moe:latest
 docker exec ollama ollama pull llama3.2:3b
 ```
 
