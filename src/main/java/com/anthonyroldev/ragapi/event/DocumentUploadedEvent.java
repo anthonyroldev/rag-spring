@@ -10,12 +10,12 @@ import java.time.LocalDateTime;
 @Setter
 public class DocumentUploadedEvent extends ApplicationEvent {
     private String documentId;
-    private LocalDateTime timestamp;
+    private LocalDateTime time;
 
-    public DocumentUploadedEvent(Object source, String documentId, LocalDateTime timestamp) {
+    public DocumentUploadedEvent(Object source, String documentId, LocalDateTime time) {
         super(source);
         this.documentId = documentId;
-        this.timestamp = timestamp;
+        this.time = time;
     }
 }
 
