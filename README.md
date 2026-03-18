@@ -88,7 +88,7 @@ Required variables:
 ```env
 AWS_ACCESS_KEY_ID=your_access_key
 AWS_SECRET_ACCESS_KEY=your_secret_key
-AWS_REGION=eu-west-1
+AWS_REGION=eu-west-3
 AWS_S3_BUCKET=your-bucket-name
 ```
 
