@@ -1,7 +1,7 @@
 package com.anthonyroldev.ragapi.service;
 
 import com.anthonyroldev.ragapi.client.S3RAGClient;
-import com.anthonyroldev.ragapi.entities.Document;
+import com.anthonyroldev.ragapi.entities.DocumentEntity;
 import com.anthonyroldev.ragapi.entities.enums.StatusEnum;
 import com.anthonyroldev.ragapi.exception.RAGDocumentException;
 import com.anthonyroldev.ragapi.exception.RAGStorageException;
@@ -28,7 +28,7 @@ public class DocumentService {
 
     public DocumentUploadResponse uploadDocument(MultipartFile file) {
         var fileKey = generateDocumentKey(file.getOriginalFilename());
-        var document = Document.builder()
+        var document = DocumentEntity.builder()
                 .filename(file.getOriginalFilename())
                 .status(StatusEnum.PENDING)
                 .s3Key(fileKey)

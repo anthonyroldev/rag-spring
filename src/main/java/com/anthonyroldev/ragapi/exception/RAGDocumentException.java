@@ -8,4 +8,8 @@ public class RAGDocumentException extends RuntimeException {
     public static RAGDocumentException documentNotFound(String id) {
         return new RAGDocumentException("Document not found: " + id);
     }
+
+    public static RAGDocumentException chunkError() {
+        return new RAGDocumentException("Error occurred while chunking the document");
+    }
 }

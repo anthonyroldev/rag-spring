@@ -16,7 +16,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "documents")
-public class Document {
+public class DocumentEntity {
     @Id
     private UUID id;
 
