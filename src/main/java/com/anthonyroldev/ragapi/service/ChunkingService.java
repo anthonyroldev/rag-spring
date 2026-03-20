@@ -33,7 +33,7 @@ public class ChunkingService {
     public void chunkDocument(UUID documentId) {
         var document = documentRepository.getDocumentById(documentId)
                 .orElseThrow(() -> RAGDocumentException.documentNotFound(String.valueOf(documentId)));
-        documentStatusUpdater.setStatus(document, StatusEnum.PROCESSING);
+        documentStatusUpdater.setStatus(document, StatusEnum.PROCESSING_CHUNKS);
         try (var s3Stream = s3RAGClient.downloadDocument(document.getS3Key())) {
             var documentFromS3 = new String(s3Stream.readAllBytes(), StandardCharsets.UTF_8);
             saveDocumentChunks(document, splitDocument(documentFromS3)
@@ -43,7 +43,7 @@ public class ChunkingService {
             documentStatusUpdater.setStatus(document, StatusEnum.COMPLETED);
         } catch (Exception e) {
             log.error("Failed to chunk document with id: {}", documentId, e);
-            documentStatusUpdater.setStatus(document, StatusEnum.FAILED);
+            documentStatusUpdater.setStatus(document, StatusEnum.FAILED_CHUNKING);
             throw RAGDocumentException.chunkError();
         }
     }
