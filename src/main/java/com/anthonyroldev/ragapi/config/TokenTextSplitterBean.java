@@ -8,6 +8,6 @@ import org.springframework.context.annotation.Configuration;
 public class TokenTextSplitterBean {
     @Bean
     public TokenTextSplitter tokenTextSplitter() {
-        return TokenTextSplitter.builder().withChunkSize(1000).build();
+        return TokenTextSplitter.builder().withChunkSize(512).build();
     }
 }
