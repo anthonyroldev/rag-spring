@@ -6,5 +6,6 @@ public enum StatusEnum {
     PROCESSING_EMBEDDING,
     COMPLETED,
     FAILED_CHUNKING,
+    FAILED_STORAGE,
     FAILED_EMBEDDING
 }
