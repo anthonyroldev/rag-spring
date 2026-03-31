@@ -37,7 +37,7 @@ public class DocumentService {
         try {
             s3RAGClient.uploadDocument(file, fileKey);
         } catch (RAGStorageException e) {
-            document.setStatus(StatusEnum.FAILED);
+            document.setStatus(StatusEnum.FAILED_STORAGE);
             documentRepository.save(document);
             log.error("Failed to upload document {}: {}", file.getOriginalFilename(), e.getMessage());
             throw e;

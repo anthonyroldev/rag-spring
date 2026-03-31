@@ -32,4 +32,12 @@ public class DocumentControllerExceptions {
                         .message("Unexpected error")
                         .build());
     }
+
+    @ExceptionHandler(RAGEmbeddingException.class)
+    public ResponseEntity<ErrorResponse> handleRAGEmbeddingException(RAGEmbeddingException e) {
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE)
+                .body(ErrorResponse.builder()
+                        .message(e.getMessage())
+                        .build());
+    }
 }

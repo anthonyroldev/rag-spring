@@ -2,7 +2,10 @@ package com.anthonyroldev.ragapi.entities.enums;
 
 public enum StatusEnum {
     PENDING,
-    PROCESSING,
+    PROCESSING_CHUNKS,
+    PROCESSING_EMBEDDING,
     COMPLETED,
-    FAILED
+    FAILED_CHUNKING,
+    FAILED_STORAGE,
+    FAILED_EMBEDDING
 }
