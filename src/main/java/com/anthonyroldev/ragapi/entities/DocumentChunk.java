@@ -3,7 +3,10 @@ package com.anthonyroldev.ragapi.entities;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.JdbcType;
+import org.hibernate.annotations.JdbcTypeCode;
 import org.hibernate.annotations.UpdateTimestamp;
+import org.hibernate.type.SqlTypes;
 
 import java.time.LocalDateTime;
 import java.util.UUID;
@@ -28,6 +31,10 @@ public class DocumentChunk {
 
     @Column(name = "chunk_index", nullable = false)
     private int chunkIndex;
+
+    @JdbcTypeCode(SqlTypes.VECTOR)
+    @Column(name = "embedding", columnDefinition = "vector(768)")
+    private float[] embedding;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
