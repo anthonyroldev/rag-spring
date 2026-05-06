@@ -41,4 +41,6 @@ spring:
 app:
   s3:
     bucket-name: ${S3_BUCKET_NAME}
+  ai:
+    top-k: 5
 
